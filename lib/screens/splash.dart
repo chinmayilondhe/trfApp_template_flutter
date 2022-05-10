@@ -11,6 +11,11 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+    startSplash();
+  }
    startSplash() {
     var duration = const Duration(seconds: 3);
     return Timer(duration, () {
@@ -25,7 +30,23 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("TRF")),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+
+            Image.asset(
+              "assets/trf.png",
+              height: 128,
+              width: 128,
+            ),
+
+          ],
+        ),
+      ),
     );
   }
 }
